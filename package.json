@@ -1,0 +1,20 @@
+{
+  "name": "howl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punreliable/howl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/punreliable/howl/issues"
+  },
+  "homepage": "https://github.com/punreliable/howl#readme"
+}
