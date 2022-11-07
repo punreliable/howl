@@ -12,6 +12,7 @@ import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
 import { SingleDogComponent } from './single-dog/single-dog.component';
 import { DogBreedsComponent } from './dog-breeds/dog-breeds.component';
+import { SiteFooterComponent } from './site-footer/site-footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DogBreedsComponent } from './dog-breeds/dog-breeds.component';
     CharacterComponent,
     SpeciesComponent,
     SingleDogComponent,
-    DogBreedsComponent
+    DogBreedsComponent,
+    SiteFooterComponent
   ],
   imports: [
     BrowserModule,
