@@ -8,13 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { BrowseComponent } from './browse/browse.component';
+import { CharacterComponent } from './character/character.component';
+import { SpeciesComponent } from './species/species.component';
+import { SingleDogComponent } from './single-dog/single-dog.component';
+import { DogBreedsComponent } from './dog-breeds/dog-breeds.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    BrowseComponent
+    BrowseComponent,
+    CharacterComponent,
+    SpeciesComponent,
+    SingleDogComponent,
+    DogBreedsComponent
   ],
   imports: [
     BrowserModule,
