@@ -10,9 +10,10 @@ const app = express()
   .use(cors())
   .use(json());
 
-const schema = buildSchema(fs.readFileSync('schema.graphql', 'utf8'));
-const characters = parse(fs.readFileSync('characters.csv', 'utf8'), { columns: true });
-const species = parse(fs.readFileSync('species.csv', 'utf8'), { columns: true });
+const schema = buildSchema(fs.readFileSync('datasets/schema.graphql', 'utf8'));
+const characters = parse(fs.readFileSync('datasets/characters.csv', 'utf8'), { columns: true });
+const species = parse(fs.readFileSync('datasets/species.csv', 'utf8'), { columns: true });
+
 
 const root = {
   characters: (args) => {

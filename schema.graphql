@@ -2,7 +2,7 @@ type Query {
   characters(offset: Int = 0, limit: Int = 10): CharactersResult
   character(name: String!): Character
   species(name: String!): Species
-  dogs: [DogsResult]
+  dogs(): [DogsResult]
 }
 
 type CharactersResult {
