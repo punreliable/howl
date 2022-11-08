@@ -2,6 +2,7 @@ type Query {
   characters(offset: Int = 0, limit: Int = 10): CharactersResult
   character(name: String!): Character
   species(name: String!): Species
+  dogs: [DogsResult]
 }
 
 type CharactersResult {
@@ -33,4 +34,13 @@ type Species {
   average_lifespan: String
   language: String
   homeworld: String
+}
+
+type DogsResult {
+  count: Int
+  dog: [Dog]
+}
+
+type Dog {
+  name: String
 }
