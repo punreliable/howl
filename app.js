@@ -10,10 +10,11 @@ const app = express()
   .use(cors())
   .use(json());
 
-const schema = buildSchema(fs.readFileSync('datasets/schema.graphql', 'utf8'));
+//const schema = buildSchema(fs.readFileSync('schema.graphql', 'utf8'));
+const schema = buildSchema(fs.readFileSync('schema-dogs.graphql', 'utf8'));
 const characters = parse(fs.readFileSync('datasets/characters.csv', 'utf8'), { columns: true });
 const species = parse(fs.readFileSync('datasets/species.csv', 'utf8'), { columns: true });
-
+const allDogs = parse(fs.readFileSync('datasets/allDogDescriptions.csv', 'utf8'), { columns: true });
 
 const root = {
   characters: (args) => {
@@ -30,9 +31,21 @@ const root = {
   },
 };
 
+const stick = {
+  dogs: (args) => {
+    return {
+      count: dogs.length,
+      dogs: dogs.slice(args.offset, args.offset + args.limit)
+    };
+  },
+  dog: (args) => {
+    return dogs.find((ch) => ch.breed_primary === args.breed_primary);
+  },
+};
+
 app.use('/graphql', graphqlHTTP({
   schema,
-  rootValue: root,
+  rootValue: stick,
   graphiql: true,
 }));
 

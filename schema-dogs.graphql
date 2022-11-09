@@ -1,0 +1,13 @@
+type Query {
+  dogs(offset: Int = 0, limit: Int = 10): DogsResult
+  dog(breed_primary: String!): Dog
+}
+
+type DogsResult {
+  count: Int
+  dogs: [Dog]
+}
+
+type Dog {
+  breed_primary: String
+}
