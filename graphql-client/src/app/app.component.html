@@ -1,14 +1,20 @@
 <!-- Toolbar -->
+<div class="toolbar navbar" role="banner">
 
-<div class="toolbar" role="banner">
-  
-  <img
-    width="40"
-    height="40"
-    alt="Logo"
-    src="../assets/dog-face-white.svg" />
-  <span>{{ title | titlecase }}</span>
-    
+  <a class="navbar" routerLink="/">
+
+    <img
+      width="40"
+      height="40"
+      alt="Logo"
+      src="../assets/dog-face-white.svg" />
+
+      <span>{{ title | titlecase }}</span>
+
+  </a>
+
+  <a class="navbar" routerLink="/browse">Browse</a>
+
   <div class="spacer"></div>
 
     <a aria-label="Angular on twitter" title="Don't use Twitter">
@@ -19,10 +25,10 @@
     </a>
 
 </div>  
-
+<app-navbar></app-navbar>
 <div class="content" role="main">
 
-  <app-navbar></app-navbar>
-  <router-outlet></router-outlet>
 
+  <router-outlet></router-outlet>
+  <app-site-footer></app-site-footer>
 </div>
