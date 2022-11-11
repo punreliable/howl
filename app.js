@@ -10,7 +10,6 @@ const app = express()
   .use(cors())
   .use(json());
 
-//const schema = buildSchema(fs.readFileSync('schema.graphql', 'utf8'));
 const schema = buildSchema(fs.readFileSync('schema-dogs.graphql', 'utf8'));
 const characters = parse(fs.readFileSync('datasets/characters.csv', 'utf8'), { columns: true });
 const species = parse(fs.readFileSync('datasets/species.csv', 'utf8'), { columns: true });
@@ -31,16 +30,23 @@ const root = {
   },
 };
 
+/**
+ * I need an object called stick
+ * stick has one method
+ * 1. getDogs
+ * arguments are passed to getDogs
+ * and it returns
+ * count
+ * and allDogs
+ * 
+ */
 const stick = {
-  dogs: (args) => {
+  getDogs: (args) => {
     return {
-      count: dogs.length,
-      dogs: dogs.slice(args.offset, args.offset + args.limit)
+      count: allDogs.length,
+      allDogs: allDogs.slice(args.offset, args.offset + args.limit)
     };
-  },
-  dog: (args) => {
-    return dogs.find((ch) => ch.breed_primary === args.breed_primary);
-  },
+  }
 };
 
 app.use('/graphql', graphqlHTTP({

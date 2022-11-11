@@ -1,13 +1,38 @@
 type Query {
-  dogs(offset: Int = 0, limit: Int = 10): DogsResult
+  getDogs(offset: Int = 0, limit: Int = 1000): DogsResult
   dog(breed_primary: String!): Dog
+}
+
+type Dog {
+  id: ID
+  org_id: String
+  url: String
+  species: String
+  breed_primary: String
+  breed_secondary: String
+  breed_mixed: String
+  breed_unknown: String
+  color_primary: String
+  color_secondary: String
+  color_tertiary: String
+  age: Int
+  sex: String
+  size: String
+  coat: String
+  name: String
+  status: String
+  contact_city: String
+  contact_state: String
+  contact_zip: Int
+  contact_country: String
+  stateQ: String
+  accessed: String
+  description: String
 }
 
 type DogsResult {
   count: Int
-  dogs: [Dog]
+  allDogs: [Dog]
 }
 
-type Dog {
-  breed_primary: String
-}
+
