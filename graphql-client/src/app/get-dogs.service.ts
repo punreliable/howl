@@ -28,9 +28,9 @@ export interface Breed {
 export class GetDogsService {
 
   private dogsQuery: QueryRef<{dogs: DogsResult}, {offest:number}>;
-  private findDogQuery: QueryRef<{dog: DogDetails}, {name: string}>;
 
   constructor(private apollo: Apollo) {
+    
     this.dogsQuery = this.apollo.watchQuery({
       query: gql`query getDogs($offset: Int!){
         getDogs($offset: Int!){
@@ -44,6 +44,7 @@ export class GetDogsService {
       }
     }`
     });
+
     this.findDogQuery = this.apollo.watchQuery({
       query: gql`query dog($name: String!) {
         dog(name: $name) {
@@ -52,14 +53,12 @@ export class GetDogsService {
         }
       }`
     });
+
   }
+
   async getDogs(offset: number): Promise<DogsResult> {
     const result = await this.dogsQuery.refetch({ offset });
     return result.data.dogs;
   }
 
-  async findBreed(breed_primary: string): Promise<Breed> {
-    const result = await this.findDogQuery.refetch({ name });
-    return result.data.breed_primary;
-  }
 }
