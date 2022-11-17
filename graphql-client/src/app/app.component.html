@@ -3,3 +3,22 @@
   <router-outlet></router-outlet>
   <app-site-footer></app-site-footer>
 </div>
+<script>
+$.ajax({
+  url: 'https://api.petfinder.com/v2/oauth2/token',
+  beforeSend: function(xhr) {
+       xhr.setRequestHeader(
+        "grant_type=client_credentials&client_id=LvnDb2AAPPYWUFL9XzVeCvFPtI0PYWf3RLOcaoKBBFfwj3LQmj&client_secret=MWAVSxwhNM77LIIRXJovCaX0X7ikNdiXaRTTir7b"
+        )
+  }, success: function(data){
+      alert(data);
+      console.log(
+      xhr
+      );
+      //process the JSON data etc
+  }, error: function(data) {
+    console.log('no dice');
+
+  }
+})
+</script>

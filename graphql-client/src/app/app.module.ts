@@ -15,6 +15,7 @@ import { DogBreedsComponent } from './dog-breeds/dog-breeds.component';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { HighlightCardComponent } from './highlight-card/highlight-card.component';
 import { NextStepsComponent } from './next-steps/next-steps.component';
+import { BrowseDogsComponent } from './browse-dogs/browse-dogs.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NextStepsComponent } from './next-steps/next-steps.component';
     DogBreedsComponent,
     SiteFooterComponent,
     HighlightCardComponent,
-    NextStepsComponent
+    NextStepsComponent,
+    BrowseDogsComponent
   ],
   imports: [
     BrowserModule,
