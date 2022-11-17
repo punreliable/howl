@@ -4,7 +4,7 @@ import { Apollo, gql, QueryRef } from 'apollo-angular';
 export interface Dog {
   name: string;
   breed_primary: string;
-  state: string;
+  contact_state: string;
 }
 
 export interface DogDetails extends Dog {
@@ -27,7 +27,8 @@ export interface Breed {
 })
 export class GetDogsService {
 
-  private dogsQuery: QueryRef<{dogs: DogsResult}, {offest:number}>;
+  private dogsQuery: QueryRef<{dogs: DogsResult}, {offset:number}>;
+  private findDogQuery: QueryRef<{dog: DogDetails}, { name: string}>;
 
   constructor(private apollo: Apollo) {
     
@@ -61,4 +62,8 @@ export class GetDogsService {
     return result.data.dogs;
   }
 
+  async findDog(name: string): Promise<DogDetails> {
+    const result = await this.findDogQuery.refetch({ name });
+    return result.data.dog;
+  }
 }
