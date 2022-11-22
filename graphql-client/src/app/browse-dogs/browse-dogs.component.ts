@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Dog, GetDogsService } from '../get-dogs.service';
-// import { Character, CharactersService } from '../characters.service';
 
 @Component({
   selector: 'app-browse-dogs',
@@ -10,13 +9,10 @@ import { Dog, GetDogsService } from '../get-dogs.service';
 })
 
 export class BrowseDogsComponent implements OnInit {
-  
+
   offset: number = 0;
   count: number = 0;
-  // characters: Character[] = [];
   dogs: Dog[] = [];
-  
-  // constructor(private charactersService: CharactersService) {}
 
   constructor(private getDogsService: GetDogsService) {}
 
@@ -47,10 +43,4 @@ export class BrowseDogsComponent implements OnInit {
     this.offset += 10;
     await this.updateDogs();
   }
-
-
-
-
-
-
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { BrowseComponent } from './browse/browse.component';
 import { BrowseDogsComponent } from './browse-dogs/browse-dogs.component';
 import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
@@ -12,7 +11,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'browse',
+    path: 'browse-dogs',
     component: BrowseDogsComponent,
   },
   {
