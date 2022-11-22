@@ -18,7 +18,6 @@
     "url": "https://github.com/punreliable/howl/issues"
   },
   "homepage": "https://github.com/punreliable/howl#readme",
-
   "browser": "dist/petfinder.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -46,7 +45,7 @@
     "rollup-plugin-typescript": "^1.0.0",
     "rollup-plugin-uglify": "^6.0.2",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "4.9.3"
   },
   "scripts": {
     "prebuild": "rimraf dist",
