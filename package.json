@@ -1,23 +1,27 @@
 {
   "name": "howl",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Retreives adoptable dogs via the Petfinder API and Angular",
+  "main": "dist/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/punreliable/howl.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "pets",
+    "adoption",
+    "petfinder"
+  ],
+  "author": "Brian Smith",
   "bugs": {
     "url": "https://github.com/punreliable/howl/issues"
   },
   "homepage": "https://github.com/punreliable/howl#readme",
+
+  "browser": "dist/petfinder.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "csv-parse": "4.16.3",
@@ -26,6 +30,65 @@
     "graphql": "15.6.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.10"
+    "@angular-devkit/build-angular": "^0.13.10",
+    "@types/jest": "^24.0.11",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "axios-mock-adapter": "^1.16.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-simple-import-sort": "^5.0.2",
+    "jest": "^24.4.0",
+    "jest-junit": "^6.3.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.6.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "ts-jest": "^24.0.0",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc && rollup -c",
+    "watch": "tsc -w | rollup -w -c",
+    "prepare": "npm run build",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "coverage": "jest --collect-coverage",
+    "lint": "eslint . --ext .ts"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*"
+    ],
+    "coverageDirectory": "build/coverage",
+    "coverageReporters": [
+      "clover",
+      "html",
+      "json",
+      "lcov",
+      "text"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "testRegex": ".*\\.test\\.(ts|js)$",
+    "testEnvironment": "node"
   }
 }
