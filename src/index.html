@@ -6,9 +6,9 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Rocket Dog Home</title>
+<title>Howl</title>
 
-<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
@@ -26,8 +26,8 @@
 <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="assets/icons/favicon-16x16.png" sizes="16x16" />
 <link rel="icon" type="image/png" href="assets/icons/favicon-128.png" sizes="128x128" />
-<meta name="application-name" content="Rocket Doggie"/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="application-name" content="Howl"/>
+<meta name="msapplication-TileColor" content="#993399" />
 <meta name="msapplication-TileImage" content="assets/icons/mstile-144x144.png" />
 <meta name="msapplication-square70x70logo" content="assets/icons/mstile-70x70.png" />
 <meta name="msapplication-square150x150logo" content="assets/icons/mstile-150x150.png" />
@@ -40,7 +40,8 @@
     
     <div class="grid-x grid-margin-y">
         <div class="cell">
-            <h1 class="text-center ">Dog's Seeking Homes</h1>
+            <h1 class="text-center">Howl</h1>
+            <h3 class="text-center">Dog's Seeking Homes</h3>
         </div>     
     </div>
     
@@ -52,8 +53,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th style="min-width:50%;">Name</th>
                         <th>Petfinder ID</th>
-                        <th>Name</th>
                     </tr>
                 </thead>
                 
@@ -84,7 +85,7 @@ $(document).foundation();
 
 <script>
 
-const client = new petfinder.Client({ apiKey:"LvnDb2AAPPYWUFL9XzVeCvFPtI0PYWf3RLOcaoKBBFfwj3LQmj", secret: "MWAVSxwhNM77LIIRXJovCaX0X7ikNdiXaRTTir7b" });
+const client = new petfinder.Client({ apiKey:"", secret: "" });
 
 async function showAnimals( animalType, searchBreed ) {
 
@@ -103,7 +104,7 @@ async function showAnimals( animalType, searchBreed ) {
     let allDogs = [];
     apiResult.data.animals.forEach(function(animal) {
         
-        $( `<tr>` + `<td data-label="#">` + `${++dogIdx}` + `</td>` + `<td data-label="Petfinder ID">` + `${animal.id}` + `</td>` +  `<td data-label="Name">` +  `<a href="${animal.url}">${animal.name}</a>` + `</td>`  + `</tr>` ).appendTo('tbody');
+        $( `<tr>` + `<td data-label="#">` + `${++dogIdx}` + `</td>` + `<td data-label="Name">` +  `<a href="${animal.url}">${animal.name}</a>` + `</td>` + `<td data-label="Petfinder ID">` + `${animal.id}` + `</td>` + `</tr>` ).appendTo('tbody');
         
         // console.log(` -- ${++dogIdx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
 
@@ -123,4 +124,5 @@ async function showAnimals( animalType, searchBreed ) {
 </script>
 
 </body>
+
 </html>

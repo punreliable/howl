@@ -1,2 +1,5 @@
 node_modules/
 datasets/
+
+.env
+process.env.env_variable
