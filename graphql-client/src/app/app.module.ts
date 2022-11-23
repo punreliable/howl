@@ -16,6 +16,7 @@ import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { HighlightCardComponent } from './highlight-card/highlight-card.component';
 import { NextStepsComponent } from './next-steps/next-steps.component';
 import { BrowseDogsComponent } from './browse-dogs/browse-dogs.component';
+import { AboutThisComponent } from './about-this/about-this.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BrowseDogsComponent } from './browse-dogs/browse-dogs.component';
     SiteFooterComponent,
     HighlightCardComponent,
     NextStepsComponent,
-    BrowseDogsComponent
+    BrowseDogsComponent,
+    AboutThisComponent
   ],
   imports: [
     BrowserModule,

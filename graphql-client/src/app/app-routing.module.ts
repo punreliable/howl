@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowseDogsComponent } from './browse-dogs/browse-dogs.component';
 import { CharacterComponent } from './character/character.component';
 import { SpeciesComponent } from './species/species.component';
+import { AboutThisComponent } from './about-this/about-this.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'species',
     component: SpeciesComponent,
+  },
+  {
+    path: 'about',
+    component: AboutThisComponent,
   },
 ];
 
