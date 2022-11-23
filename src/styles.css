@@ -1,14 +1,11 @@
-/* Project's Master Stylesheet */
 .responsive-card-table {
   border-collapse: collapse;
 }
-
 .responsive-card-table.unstriped tbody {
   background-color: transparent;
 }
-
 .responsive-card-table th {
-  background-color: ligten(#E9E9E9, 15%);
+  background-color: white;
 }
 
 .responsive-card-table tr,
@@ -21,22 +18,18 @@
   .responsive-card-table {
     /* Get table cells to act like rows */
   }
-
   .responsive-card-table thead tr {
     position: absolute;
     top: -9999em;
     left: -9999em;
   }
-
   .responsive-card-table tr {
     border: 1px solid #000000;
     display: block;
   }
-
   .responsive-card-table tr + tr {
     margin-top: 1.5rem;
   }
-
   .responsive-card-table td {
     border: none;
     display: flex;
@@ -46,7 +39,6 @@
     padding-left: 50%;
     position: relative;
   }
-
   .responsive-card-table td:before {
     content: attr(data-label);
     display: inline-block;
@@ -57,7 +49,6 @@
     position: relative;
     z-index: 1;
   }
-
   .responsive-card-table td:after {
     content: "";
     position: absolute;
